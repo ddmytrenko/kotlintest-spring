@@ -1,3 +1,18 @@
+# gradle
+.gradle/
+build/
+
+# intellij idea
 .idea/
 *.iml
-target/
+*.ipr
+*.iws
+
+# osx
+.DS_Store
+
+# temporary
+*~
+*.bak
+*.swp
+*.tmp
