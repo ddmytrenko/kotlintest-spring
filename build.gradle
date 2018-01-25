@@ -1,0 +1,51 @@
+buildscript {
+
+    ext {
+
+        versions = [
+                kotlin: '1.2.21',
+                kotlintest: '2.0.7',
+                spring: '4.3.10.RELEASE'
+        ]
+
+        kotlinGroup = [
+                stdlibJdk8: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+                testJunit: "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}"
+        ]
+
+        kotlintest = "io.kotlintest:kotlintest:${versions.kotlintest}"
+
+        spring = [
+                context: "org.springframework:spring-context:${versions.spring}",
+                test: "org.springframework:spring-test:${versions.spring}"
+        ]
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-allopen:${versions.kotlin}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+
+apply from: "${project.rootDir}/gradle/config/project.gradle"
+apply from: "${project.rootDir}/gradle/config/source-compatibility.gradle"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+    compile kotlinGroup.stdlibJdk8
+    compile kotlinGroup.testJunit
+    compile kotlintest
+    compile spring.context
+    compile spring.test
+}
