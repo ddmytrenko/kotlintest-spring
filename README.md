@@ -2,6 +2,9 @@
 A module that allows kotlintest to work together with spring
 
 
+[![Release](https://jitpack.io/v/ddmytrenko/kotlintest-spring.svg)](https://jitpack.io/#ddmytrenko/kotlintest-spring)
+
+
 ## How it works
 Basically, we wrote our own runner that first starts the Spring Runner and then executes the Kotlin Test runner.
 
