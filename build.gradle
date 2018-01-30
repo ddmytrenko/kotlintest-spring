@@ -37,6 +37,10 @@ apply plugin: 'kotlin-spring'
 apply from: "${project.rootDir}/gradle/config/project.gradle"
 apply from: "${project.rootDir}/gradle/config/source-compatibility.gradle"
 
+allOpen {
+    annotation("com.acomodeo.kotlintest.spring.annotation.JvmNotFinal")
+}
+
 repositories {
     jcenter()
 }

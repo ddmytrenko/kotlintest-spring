@@ -8,6 +8,7 @@ import org.junit.runner.RunWith
 
 /**
  * @author Mischa Holz
+ * @author Dmytro Dmytrenko
  */
 @RunWith(KotlinTestSpringRunner::class)
 abstract class SpringWordSpec : WordSpec(), SpringSpec {
@@ -15,13 +16,12 @@ abstract class SpringWordSpec : WordSpec(), SpringSpec {
     override val oneInstancePerTest: Boolean = false
 
     final override fun interceptSpec(context: Spec, spec: () -> Unit) {
-        autowireAndBeforeAll()
-
+        autowireAndInterceptSpec(context)
         spec()
     }
 
     @Test
-    fun loading() {}
-
+    fun dummyTest() {
+        // the dummy test needed for JUnit
+    }
 }
-

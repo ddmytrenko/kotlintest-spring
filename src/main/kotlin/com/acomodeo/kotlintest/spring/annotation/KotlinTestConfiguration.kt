@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration
  * @author Mischa Holz
  */
 @Configuration
-open class KotlinTestConfiguration {
+class KotlinTestConfiguration {
 
     @Bean
-    open fun autowireCapableBeanFactoryHolder() = AutowireCapableBeanFactoryHolder()
-
+    fun autowireCapableBeanFactoryHolder() =
+            AutowireCapableBeanFactoryHolder()
 }

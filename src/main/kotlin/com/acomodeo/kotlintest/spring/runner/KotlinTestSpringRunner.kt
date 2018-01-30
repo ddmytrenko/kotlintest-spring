@@ -7,15 +7,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 
 /**
  * @author Mischa Holz
+ * @author Dmytro Dmytrenko
  */
-class KotlinTestSpringRunner(val testClazz: Class<Spec>) : SpringJUnit4ClassRunner(testClazz) {
-    private val kTestRunner = KTestJUnitRunner(testClazz)
+class KotlinTestSpringRunner(testClazz: Class<Spec>) : SpringJUnit4ClassRunner(testClazz) {
 
-    override fun getDescription() = kTestRunner.description
+    private val kTestRunner by lazy {
+        KTestJUnitRunner(testClazz)
+    }
 
-    override fun run(notifier: RunNotifier?) {
+    override fun getDescription() =
+            kTestRunner.description
+
+    override fun run(notifier: RunNotifier) {
         super.run(notifier)
-
         kTestRunner.run(notifier)
     }
 }
