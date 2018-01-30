@@ -1,5 +1,7 @@
 # kotlintest-spring
-A module that allows kotlintest to work together with spring
+A module that allows
+[kotlintest](https://github.com/kotlintest/kotlintest) to work together with
+[Spring Framework](https://spring.io/)
 
 
 [![Release](https://jitpack.io/v/ddmytrenko/kotlintest-spring.svg)](https://jitpack.io/#ddmytrenko/kotlintest-spring)
